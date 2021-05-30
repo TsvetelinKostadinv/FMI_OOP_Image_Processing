@@ -7,7 +7,7 @@ namespace improc
 {
 class Printable
 {
-    public:
+public:
     virtual const std::string& toStr() const = 0;
 
     friend std::ostream& operator<<(std::ostream& os,

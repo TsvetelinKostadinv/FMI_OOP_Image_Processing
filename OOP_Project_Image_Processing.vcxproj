@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\catch2\catch_amalgamated.cpp" />
+    <ClCompile Include="src\command\Command.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\util\Printable.cpp" />
+    <ClCompile Include="src\util\StringUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\catch2\catch_amalgamated.hpp" />
+    <ClInclude Include="lib\rlutil\rlutil.h" />
+    <ClInclude Include="src\command\Command.h" />
+    <ClInclude Include="src\util\Printable.h" />
+    <ClInclude Include="src\util\StringUtils.h" />
+    <ClInclude Include="src\util\Util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include=".gitignore" />
+    <None Include=".gitmodules" />
+    <None Include="lib\rlutil\docs\HTML\files\docs\APIReference-txt.html" />
+    <None Include="lib\rlutil\docs\HTML\files\docs\ColorCodes-txt.html" />
+    <None Include="lib\rlutil\docs\HTML\files\docs\Developing-txt.html" />
+    <None Include="lib\rlutil\docs\HTML\files\docs\License-txt.html" />
+    <None Include="lib\rlutil\docs\HTML\files\rlutil-h.html" />
+    <None Include="lib\rlutil\docs\HTML\files\test-cpp.html" />
+    <None Include="lib\rlutil\docs\HTML\index.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Classes.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Constants.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Files.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Functions.html" />
+    <None Include="lib\rlutil\docs\HTML\index\General.html" />
+    <None Include="lib\rlutil\docs\HTML\index\General2.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Macros.html" />
+    <None Include="lib\rlutil\docs\HTML\index\Types.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ClassesC.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ClassesR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsA.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsB.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsC.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsD.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsG.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsK.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsL.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsM.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsW.html" />
+    <None Include="lib\rlutil\docs\HTML\search\ConstantsY.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FilesR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FilesT.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsA.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsC.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsG.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsH.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsK.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsL.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsM.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsN.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsS.html" />
+    <None Include="lib\rlutil\docs\HTML\search\FunctionsT.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralA.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralB.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralC.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralD.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralE.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralF.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralG.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralH.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralI.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralK.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralL.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralM.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralN.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralS.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralT.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralW.html" />
+    <None Include="lib\rlutil\docs\HTML\search\GeneralY.html" />
+    <None Include="lib\rlutil\docs\HTML\search\MacrosI.html" />
+    <None Include="lib\rlutil\docs\HTML\search\MacrosR.html" />
+    <None Include="lib\rlutil\docs\HTML\search\NoResults.html" />
+    <None Include="lib\rlutil\docs\HTML\search\TypesC.html" />
+    <None Include="lib\rlutil\docs\HTML\search\TypesK.html" />
+    <None Include="lib\rlutil\docs\template.html" />
+    <None Include="lib\rlutil\index.html" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7FE19FD3-538B-4719-90FA-252773218AB5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>OOPImageProcessing</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

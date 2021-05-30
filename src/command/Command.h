@@ -1,18 +1,14 @@
 #pragma once
 
 #include <string>
-#include "util/Log.h"
 #include "util/Printable.h"
 
 namespace improc
 {
 class Command : public virtual Printable
 {
-    public:
-    Command(const std::string& commandName) : commandName(commandName)
-    {
-        INFO("Base command called with: %s\n", commandName.c_str());
-    }
+public:
+    Command(const std::string& commandName) : commandName(commandName) {}
 
     bool shouldTrigger(const std::string& givenCommand) const;
 
@@ -21,17 +17,14 @@ class Command : public virtual Printable
     virtual void run(std::istream& is) const = 0;
     virtual const std::string& toStr() const = 0;
 
-    private:
+private:
     const std::string commandName;
 };
 
 class NewCommand : public virtual Command
 {
-    public:
-    NewCommand() : Command("new")
-    {
-        INFO("New initialized with name: %s\n", this->getCommandName().c_str());
-    }
+public:
+    NewCommand() : Command("new") {}
 
     void run(std::istream& is) const override
     {
@@ -45,6 +38,6 @@ class NewCommand : public virtual Command
         return help;
     }
 
-    private:
+private:
 };
 }  // namespace improc

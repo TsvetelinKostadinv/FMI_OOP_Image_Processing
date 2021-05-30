@@ -1,6 +1,6 @@
 ﻿---
 BasedOnStyle: Chromium
-AccessModifierOffset: '0'
+AccessModifierOffset: '-4'
 BreakBeforeBraces: Allman
 IndentWidth: '4'
 SpaceAfterCStyleCast: 'true'
