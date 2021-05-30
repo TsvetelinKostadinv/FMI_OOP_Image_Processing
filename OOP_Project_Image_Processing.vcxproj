@@ -24,6 +24,7 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\util\Printable.cpp" />
     <ClCompile Include="src\util\StringUtils.cpp" />
+    <ClCompile Include="tests\NewCommand.test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\catch2\catch_amalgamated.hpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="src\util\Printable.h" />
     <ClInclude Include="src\util\StringUtils.h" />
     <ClInclude Include="src\util\Util.h" />
+    <ClInclude Include="tests\CommandTestsHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".clang-format" />
@@ -180,7 +182,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -198,7 +200,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -218,7 +220,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -240,7 +242,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

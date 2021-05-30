@@ -1,3 +1,6 @@
 [submodule "lib/rlutil"]
 	path = lib/rlutil
 	url = git://github.com/tapio/rlutil
+[submodule "lib/pnm"]
+	path = lib/pnm
+	url = https://github.com/dmilos/PNM

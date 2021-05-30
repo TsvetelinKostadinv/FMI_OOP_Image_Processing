@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include "util/Printable.h"
 
@@ -9,6 +10,7 @@ class Command : public virtual Printable
 {
 public:
     Command(const std::string& commandName) : commandName(commandName) {}
+    Command(const char* commandName) : commandName(commandName) {}
 
     bool shouldTrigger(const std::string& givenCommand) const;
 
@@ -17,14 +19,14 @@ public:
     virtual void run(std::istream& is) const = 0;
     virtual const std::string& toStr() const = 0;
 
-private:
+protected:
     const std::string commandName;
 };
 
 class NewCommand : public virtual Command
 {
 public:
-    NewCommand() : Command("new") {}
+    NewCommand() : Command("NEW") {}
 
     void run(std::istream& is) const override
     {
@@ -34,7 +36,7 @@ public:
 
     const std::string& toStr() const override
     {
-        static const std::string help = "new <dimWidth> <dimHeight>";
+        static const std::string help = "NEW <dimWidth> <dimHeight>";
         return help;
     }
 
