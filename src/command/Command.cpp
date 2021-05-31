@@ -2,9 +2,11 @@
 #include "util/StringUtils.h"
 
 #include <string>
-
-bool improc::Command::shouldTrigger(const std::string& givenCommand) const
+namespace improc
+{
+bool Command::shouldTrigger(const std::string& givenCommand) const
 {
     std::string askedCommand = givenCommand;
     return equalsIgnoreCase(this->commandName, askedCommand);
 }
+}  // namespace improc

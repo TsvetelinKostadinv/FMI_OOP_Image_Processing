@@ -8,7 +8,8 @@ namespace improc
 class Printable
 {
 public:
-    virtual const std::string& toStr() const = 0;
+    // Returns the object in the form of a std::string
+    virtual std::string toStr() const = 0;
 
     friend std::ostream& operator<<(std::ostream& os,
                                     const Printable& printable);

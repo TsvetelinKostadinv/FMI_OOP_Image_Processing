@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lib\catch2\catch_amalgamated.cpp" />
+    <ClCompile Include="src\pixel\Pixel.cpp" />
     <ClCompile Include="src\command\Command.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\util\Printable.cpp" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <ClInclude Include="lib\catch2\catch_amalgamated.hpp" />
     <ClInclude Include="lib\rlutil\rlutil.h" />
+    <ClInclude Include="src\pixel\Pixel.h" />
     <ClInclude Include="src\command\Command.h" />
     <ClInclude Include="src\util\Printable.h" />
     <ClInclude Include="src\util\StringUtils.h" />

@@ -15,3 +15,21 @@ bool improc::equalsIgnoreCase(const std::string& fst, const std::string& scd)
            std::equal(fst.begin(), fst.end(), scd.begin(), scd.end(),
                       &charsEqualIgnoreCase);
 }
+
+static bool isValidHexSymbol(const char ch)
+{
+    return ('a' <= ch && ch <= 'f') || ('A' <= ch && ch <= 'F') ||
+           ('0' <= ch && ch <= '9');
+}
+
+bool improc::isValidHexadecimalNumber(const std::string& str)
+{
+    for (std::size_t i = 0; i < str.length(); ++i)
+    {
+        if (!isValidHexSymbol(str[i]))
+        {
+            return false;
+        }
+    }
+    return true;
+}

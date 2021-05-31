@@ -7,7 +7,7 @@
 
 TEST_CASE("NEW command triggering", "[NEW-command]")
 {
-    improc::NewCommand cmd;
+    improc::NewCommand cmd("123	  123						#ffffff");
     SECTION("Triggers on right string")
     {
         testCommandShouldTrigger(cmd, "new");
