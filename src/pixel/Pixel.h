@@ -26,15 +26,19 @@ using PixelPGM = Pixel<0, 0xf>;*/
 class PixelPPM : public virtual Pixel
 {
 public:
-    union {
+    union
+    {
+        short channelValues[3];
         struct
         {
             short r, g, b;
         };
-        short channelValues[3];
     };
 
     void parse(const std::string& str) override;
     std::string toStr() const override;
+    PixelPPM();
+    PixelPPM(short r, short g, short b);
+    PixelPPM(short channelValues[3]);
 };
 }  // namespace improc

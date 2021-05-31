@@ -31,5 +31,6 @@ bool improc::isValidHexadecimalNumber(const std::string& str)
             return false;
         }
     }
-    return true;
+
+    return str.length() != 0;
 }

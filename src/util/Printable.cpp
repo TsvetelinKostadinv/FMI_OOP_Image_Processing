@@ -1,9 +1,11 @@
 #include "Printable.h"
 #include <ostream>
 
-std::ostream& improc::operator<<(std::ostream& os,
-                                 const improc::Printable& printable)
+namespace improc
+{
+std::ostream& operator<<(std::ostream& os, const Printable& printable)
 {
     os << printable.toStr();
     return os;
 }
+}  // namespace improc

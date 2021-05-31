@@ -80,7 +80,8 @@ public:
         catch (std::invalid_argument&)
         {
             throw std::invalid_argument(
-                "The argument passed as height must be an integer value");
+                "The argument passed as fill colour must be a hexadecimal "
+                "value in the form #RRGGBB");
         }
     }
 

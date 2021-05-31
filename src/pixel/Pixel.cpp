@@ -19,6 +19,18 @@ std::string PixelPPM::toStr() const
     return stream.str();
 }
 
+PixelPPM::PixelPPM() : r(0), g(0), b(0) {}
+
+PixelPPM::PixelPPM(short r, short g, short b) : r(r), g(g), b(b) {}
+
+PixelPPM::PixelPPM(short channelValues[3])
+{
+    for (short i = 0; i < 3; ++i)
+    {
+        this->channelValues[i] = channelValues[i];
+    }
+}
+
 void PixelPPM::parse(const std::string& str)
 {
     if (str[0] != '#')
@@ -39,9 +51,9 @@ void PixelPPM::parse(const std::string& str)
             "The pixel data should be in the fromat RRGGBB, where each letter "
             "is a hexadecimal symbol");
     }
-    std::size_t rPixelData = std::stoul(pixelDataStr.substr(0, 2), nullptr, 16);
-    std::size_t gPixelData = std::stoul(pixelDataStr.substr(2, 2), nullptr, 16);
-    std::size_t bPixelData = std::stoul(pixelDataStr.substr(4, 2), nullptr, 16);
+    short rPixelData = std::stoi(pixelDataStr.substr(0, 2), nullptr, 16);
+    short gPixelData = std::stoi(pixelDataStr.substr(2, 2), nullptr, 16);
+    short bPixelData = std::stoi(pixelDataStr.substr(4, 2), nullptr, 16);
     this->r = rPixelData;
     this->g = gPixelData;
     this->b = bPixelData;
