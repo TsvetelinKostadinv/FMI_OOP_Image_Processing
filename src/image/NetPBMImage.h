@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <vector>
 
-#include "pixel/Pixel.h"
+#include "image/Pixel.h"
 #include "pnm/pnm.hpp"
 
 namespace improc

@@ -6,9 +6,8 @@
 
 namespace improc
 {
-class Pixel : public Printable
+struct Pixel : public Printable
 {
-public:
     Pixel();
     virtual ~Pixel() = default;
 
@@ -17,13 +16,10 @@ public:
     virtual void parse(const std::string& str) = 0;
 
     virtual std::string toStr() const = 0;
-
-private:
 };
 
-class PixelPBM : public virtual Pixel
+struct PixelPBM : public virtual Pixel
 {
-public:
     void parse(const std::string& str) override;
     std::string toStr() const override;
     PixelPBM();
@@ -31,22 +27,32 @@ public:
 
     bool value;
 };
-class PixelPPM : public virtual Pixel
+
+struct PixelPGM : public virtual Pixel
 {
-public:
+    void parse(const std::string& str) override;
+    std::string toStr() const override;
+    PixelPGM();
+    PixelPGM(unsigned short value);
+
+    unsigned short value;
+};
+
+struct PixelPPM : public virtual Pixel
+{
     union
     {
-        short channelValues[3];
+        unsigned short channelValues[3];
         struct
         {
-            short r, g, b;
+            unsigned short r, g, b;
         };
     };
 
     void parse(const std::string& str) override;
     std::string toStr() const override;
     PixelPPM();
-    PixelPPM(short r, short g, short b);
-    PixelPPM(short channelValues[3]);
+    PixelPPM(unsigned short r, unsigned short g, unsigned short b);
+    PixelPPM(unsigned short channelValues[3]);
 };
 }  // namespace improc

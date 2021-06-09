@@ -21,9 +21,12 @@ std::string PixelPPM::toStr() const
 
 PixelPPM::PixelPPM() : r(0), g(0), b(0) {}
 
-PixelPPM::PixelPPM(short r, short g, short b) : r(r), g(g), b(b) {}
+PixelPPM::PixelPPM(unsigned short r, unsigned short g, unsigned short b)
+    : r(r), g(g), b(b)
+{
+}
 
-PixelPPM::PixelPPM(short channelValues[3])
+PixelPPM::PixelPPM(unsigned short channelValues[3])
 {
     for (short i = 0; i < 3; ++i)
     {
@@ -85,4 +88,28 @@ PixelPBM::PixelPBM() : value(false) {}
 
 PixelPBM::PixelPBM(bool value) : value(value) {}
 
+void PixelPGM::parse(const std::string& str)
+{
+    int parsed = -1;
+    try
+    {
+        int parsed = std::stoi(str);
+    }
+    catch (std::invalid_argument&)
+    {
+        throw std::invalid_argument(
+            "Could not parse number, has to be in the range 0-255");
+    }
+    if (parsed < 0 || parsed >= 256)
+    {
+        throw std::invalid_argument(
+            "Could not parse number, has to be in the range 0-255");
+    }
+}
+std::string PixelPGM::toStr() const
+{
+    return std::to_string(value);
+}
+PixelPGM::PixelPGM() : value(0) {}
+PixelPGM::PixelPGM(unsigned short value) : value(value) {}
 }  // namespace improc

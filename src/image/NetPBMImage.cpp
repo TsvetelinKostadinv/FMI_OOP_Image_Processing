@@ -10,9 +10,9 @@ PBMImage::PBMImage(std::size_t width,
                    const pnm::image<pnm::bit_pixel>& data)
     : NetPBMImage(width, height)
 {
-    for (int i = 0; i < height; ++i)
+    for (std::size_t i = 0; i < height; ++i)
     {
-        for (int j = 0; j < width; ++j)
+        for (std::size_t j = 0; j < width; ++j)
         {
             pixels.emplace_back(data.at(j, i).value);
         }

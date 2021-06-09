@@ -4,7 +4,7 @@
 #include <sstream>
 
 #include "error/ParseError.h"
-#include "pixel/Pixel.h"
+#include "image/Pixel.h"
 #include "pnm/pnm.hpp"
 
 //#include <iomanip>
