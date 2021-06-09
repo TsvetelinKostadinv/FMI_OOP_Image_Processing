@@ -21,8 +21,16 @@ public:
 private:
 };
 
-/*using PixelPBM = Pixel<0, 1>;
-using PixelPGM = Pixel<0, 0xf>;*/
+class PixelPBM : public virtual Pixel
+{
+public:
+    void parse(const std::string& str) override;
+    std::string toStr() const override;
+    PixelPBM();
+    PixelPBM(bool value);
+
+    bool value;
+};
 class PixelPPM : public virtual Pixel
 {
 public:

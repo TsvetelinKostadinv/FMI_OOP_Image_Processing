@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\util\file\PBMImageLoader.cpp" />
+    <ClCompile Include="src\image\NetPBMImage.cpp" />
     <ClCompile Include="lib\catch2\catch_amalgamated.cpp" />
     <ClCompile Include="src\pixel\Pixel.cpp" />
     <ClCompile Include="src\command\Command.cpp" />
@@ -26,9 +28,13 @@
     <ClCompile Include="src\util\Printable.cpp" />
     <ClCompile Include="src\util\StringUtils.cpp" />
     <ClCompile Include="tests\command\NewCommand.test.cpp" />
+    <ClCompile Include="tests\util\file\PBMImageLoader.test.cpp" />
     <ClCompile Include="tests\util\StringUtils.test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\util\file\PBMImageLoader.h" />
+    <ClInclude Include="src\image\NetPBMImage.h" />
+    <ClInclude Include="src\util\file\ImageLoaderWrapper.h" />
     <ClInclude Include="lib\catch2\catch_amalgamated.hpp" />
     <ClInclude Include="lib\rlutil\rlutil.h" />
     <ClInclude Include="src\pixel\Pixel.h" />
@@ -109,6 +115,13 @@
     <None Include="lib\rlutil\docs\template.html" />
     <None Include="lib\rlutil\index.html" />
     <None Include="README.md" />
+    <None Include="tests\resources\j.pbm" />
+    <None Include="tests\resources\j_10x10.pbm" />
+    <None Include="tests\resources\j_8x10.pbm" />
+    <None Include="tests\resources\portal_Companion_cube.pgm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tests\resources\portal_Companion_cube.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

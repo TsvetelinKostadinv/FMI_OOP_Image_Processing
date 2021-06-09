@@ -59,4 +59,30 @@ void PixelPPM::parse(const std::string& str)
     this->b = bPixelData;
 }
 
+void PixelPBM::parse(const std::string& str)
+{
+    if (str == "1")
+    {
+        value = true;
+    }
+    else if (str == "0")
+    {
+        value = false;
+    }
+    else
+    {
+        throw std::invalid_argument(
+            "Could not initialize PBM pixel with value: " + str);
+    }
+}
+
+std::string PixelPBM::toStr() const
+{
+    return "" + value;
+}
+
+PixelPBM::PixelPBM() : value(false) {}
+
+PixelPBM::PixelPBM(bool value) : value(value) {}
+
 }  // namespace improc
