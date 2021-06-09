@@ -32,6 +32,7 @@
     <ClCompile Include="tests\util\StringUtils.test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\error\ParseError.h" />
     <ClInclude Include="src\util\file\PBMImageLoader.h" />
     <ClInclude Include="src\image\NetPBMImage.h" />
     <ClInclude Include="src\util\file\ImageLoaderWrapper.h" />
@@ -118,6 +119,7 @@
     <None Include="tests\resources\j.pbm" />
     <None Include="tests\resources\j_10x10.pbm" />
     <None Include="tests\resources\j_8x10.pbm" />
+    <None Include="tests\resources\j_comments.pbm" />
     <None Include="tests\resources\portal_Companion_cube.pgm" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +202,8 @@
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -219,6 +223,7 @@
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -240,6 +245,7 @@
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -263,6 +269,7 @@
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)lib;$(ProjectDir)tests;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

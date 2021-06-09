@@ -5,6 +5,7 @@
 
 #include "error/ParseError.h"
 #include "pixel/Pixel.h"
+#include "pnm/pnm.hpp"
 
 //#include <iomanip>
 //#include <iostream>
@@ -45,89 +46,19 @@ const std::string PBMImageLoader::correctFileExtention() const
 PBMImageLoaderTextMode::PBMImageLoaderTextMode(const std::string& filepath)
     : PBMImageLoader(filepath)
 {
-    
 }
 
 void PBMImageLoaderTextMode::load()
 {
-    std::ifstream ifs(filepath);
-    if (!ifs)
+    try
     {
-        throw std::runtime_error("Could not open file!");
+        pnm::image<pnm::bit_pixel> loaded = pnm::read_pbm_ascii(filepath);
+        image = new PBMImage(loaded.width(), loaded.height(), loaded);
     }
-    std::vector<bool> data;
-
-    std::string fstLine;
-    std::getline(ifs, fstLine);
-    if (fstLine.size() < 2)
+    catch (std::runtime_error& e)
     {
-        throw std::runtime_error("Need file format descriptor");
-    }
-    do
-    {
-        if (fstLine[0] != '#')
-        {
-            std::string format = fstLine.substr(0, 2);
-            if (format != "P1" && format != "p1")
-            {
-                throw std::runtime_error(
-                    "Tried to load wrong file format with PBM loader!");
-            }
-        }
-        else
-        {
-            std::getline(ifs, fstLine);
-        }
-    } while (true);
-
-    std::string sizesLine;
-    std::size_t width = 0;
-    std::size_t height = 0;
-    std::getline(ifs, sizesLine);
-
-    do
-    {
-        if (sizesLine[0] != '#')
-        {
-            std::stringstream ss(sizesLine);
-            std::string widthStr;
-            ss >> widthStr;
-            std::string rest;
-            ss >> rest;
-            while (rest[0] == '#')
-            {
-                std::getline(ifs, rest);
-            }
-            std::stringstream restSS(rest);
-            std::string heightStr;
-            restSS >> heightStr;
-
-            try
-            {
-                width = std::stol(widthStr);
-            }
-            catch (std::invalid_argument&)
-            {
-                throw improc::ParseError("Could not parse the width!");
-            }
-            try
-            {
-                height = std::stol(heightStr);
-            }
-            catch (std::invalid_argument&)
-            {
-                throw improc::ParseError("Could not parse the height!");
-            }
-        }
-        else
-        {
-            std::getline(ifs, fstLine);
-        }
-    } while (true);
-
-    while (!ifs.eof())
-    {
-        if ()
+        throw improc::ParseError(
+            std::string("Could not parse file. Inner exception: ") + e.what());
     }
 }
 NetPBMImage<PixelPBM>* PBMImageLoaderTextMode::getLoadedImage() const

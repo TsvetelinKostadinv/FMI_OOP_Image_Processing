@@ -26,12 +26,39 @@ TEST_CASE("Should load successfully a file", "[PMBLoader]")
 
         improc::NetPBMImage<improc::PixelPBM>* image = loader.getLoadedImage();
 
-        const std::vector<improc::PixelPBM> loaded = image->getPixels();
-        for (std::size_t i = 0; i < loaded.size(); ++i)
+        for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
         {
-            REQUIRE((bool) pixels[i] == loaded[i].value);
+            REQUIRE((bool) pixels[i] == image->at(i).value);
         }
     }
+
+    SECTION("j_comments.pbm 6x10")
+    {
+        std::uint8_t pixels[] = {
+            0, 0, 0, 0, 1, 0,  //
+            0, 0, 0, 0, 1, 0,  //
+            0, 0, 0, 0, 1, 0,  //
+            0, 0, 0, 0, 1, 0,  //
+            0, 0, 0, 0, 1, 0,  //
+            0, 0, 0, 0, 1, 0,  //
+            1, 0, 0, 0, 1, 0,  //
+            0, 1, 1, 1, 0, 0,  //
+            0, 0, 0, 0, 0, 0,  //
+            0, 0, 0, 0, 0, 0,
+        };
+
+        improc::PBMImageLoaderTextMode loader(
+            "./tests/resources/j_comments.pbm");
+        REQUIRE_NOTHROW(loader.load());
+
+        improc::NetPBMImage<improc::PixelPBM>* image = loader.getLoadedImage();
+
+        for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
+        {
+            REQUIRE((bool) pixels[i] == image->at(i).value);
+        }
+    }
+
     SECTION("j.pbm 8x10")
     {
         std::uint8_t pixels[] = {
@@ -51,11 +78,9 @@ TEST_CASE("Should load successfully a file", "[PMBLoader]")
         REQUIRE_NOTHROW(loader.load());
 
         improc::NetPBMImage<improc::PixelPBM>* image = loader.getLoadedImage();
-
-        const std::vector<improc::PixelPBM> loaded = image->getPixels();
-        for (std::size_t i = 0; i < loaded.size(); ++i)
+        for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
         {
-            REQUIRE((bool) pixels[i] == loaded[i].value);
+            REQUIRE((bool) pixels[i] == image->at(i).value);
         }
     }
     SECTION("j.pbm 10x10")
@@ -78,24 +103,9 @@ TEST_CASE("Should load successfully a file", "[PMBLoader]")
 
         improc::NetPBMImage<improc::PixelPBM>* image = loader.getLoadedImage();
 
-        const std::vector<improc::PixelPBM> loaded = image->getPixels();
-
-        for (std::size_t i = 0; i < 100; ++i)
+        for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
         {
-            if (i % 10 == 0)
-                std::cout << std::endl;
-            std::cout << (char) ('0' + pixels[i]);
-        }
-        std::cout << std::endl << "---------" << std::endl;
-        for (std::size_t i = 0; i < loaded.size(); ++i)
-        {
-            if (i % 10 == 0)
-                std::cout << std::endl;
-            std::cout << (char) ('0' + loaded[i].value);
-        }
-        for (std::size_t i = 0; i < loaded.size(); ++i)
-        {
-            REQUIRE((bool) pixels[i] == loaded[i].value);
+            REQUIRE((bool) pixels[i] == image->at(i).value);
         }
     }
 }
