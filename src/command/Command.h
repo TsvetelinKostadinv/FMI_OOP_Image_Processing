@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "pixel/Pixel.h"
+#include "image/Pixel.h"
 #include "util/Printable.h"
 
 namespace improc
@@ -29,13 +29,23 @@ public:
     }
     virtual ~Command() {}
 
+    // Checks whether the command should be triggered on receiving the given
+    // string
     bool shouldTrigger(const std::string& givenCommand) const;
 
+    // Returns the command name
     const std::string& getCommandName() const { return commandName; }
+
+    // Returns the parameters vector
     const std::vector<std::string>& getParams() const { return argv; }
+
+    // Returns the number of arguments
     std::size_t getCommandCount() const { return argc; }
 
+    // Runs the command
     virtual void run() const = 0;
+
+    // Prints it in a human readable fashion
     virtual std::string toStr() const = 0;
 
 protected:
@@ -48,6 +58,7 @@ protected:
 class NewCommand : public virtual Command
 {
 public:
+    // Constructs a new command with the given text as parameters
     NewCommand(const std::string& text) : Command("NEW", text)
     {
         if (argc != 3)

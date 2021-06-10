@@ -6,6 +6,7 @@
 
 namespace improc
 {
+// Loads a PBM image
 class PBMImageLoader : public ImageLoaderWrapper<PixelPBM>
 {
 public:
@@ -18,6 +19,7 @@ protected:
     virtual const std::string correctFileExtention() const;
 };
 
+// Loads a PBM iamge from a text based file
 class PBMImageLoaderTextMode : public PBMImageLoader
 {
 public:

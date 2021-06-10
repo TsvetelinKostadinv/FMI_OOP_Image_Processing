@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\util\ConsoleDrawing.cpp" />
     <ClCompile Include="src\util\file\PBMImageLoader.cpp" />
     <ClCompile Include="src\image\NetPBMImage.cpp" />
     <ClCompile Include="lib\catch2\catch_amalgamated.cpp" />
@@ -33,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\error\ParseError.h" />
+    <ClInclude Include="src\util\ConsoleDrawing.h" />
     <ClInclude Include="src\util\file\PBMImageLoader.h" />
     <ClInclude Include="src\image\NetPBMImage.h" />
     <ClInclude Include="src\util\file\ImageLoaderWrapper.h" />

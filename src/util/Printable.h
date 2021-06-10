@@ -5,6 +5,7 @@
 
 namespace improc
 {
+// Defines a printable class
 class Printable
 {
 public:

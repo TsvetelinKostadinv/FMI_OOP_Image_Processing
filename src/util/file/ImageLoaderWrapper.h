@@ -6,10 +6,13 @@
 
 namespace improc
 {
-template <typename PixelType,
-          typename = std::enable_if<std::is_base_of<Pixel, PixelType>::value>>
+// A wrapper around some library functionality that will load the images
+template <typename PixelType>
 class ImageLoaderWrapper
 {
+    static_assert(std::is_base_of<Pixel, PixelType>::value,
+                  "The PixelType must extend the Pixel class");
+
 public:
     ImageLoaderWrapper(const std::string& filepath)
         : filepath(filepath), loaded(false), image(nullptr)
@@ -18,6 +21,7 @@ public:
 
     ~ImageLoaderWrapper() { delete image; }
 
+    // Loads the image from the supplied filepath
     virtual void load() = 0;
 
     virtual NetPBMImage<PixelType>* getLoadedImage() const = 0;

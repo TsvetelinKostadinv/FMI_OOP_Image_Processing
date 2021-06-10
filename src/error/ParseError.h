@@ -5,6 +5,7 @@
 
 namespace improc
 {
+// Indicates that something could not be parsed correctly
 class ParseError : public std::logic_error
 {
 public:

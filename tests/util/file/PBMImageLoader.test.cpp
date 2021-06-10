@@ -3,6 +3,7 @@
 #include "util/file/PBMImageLoader.h"
 
 #include <iostream>
+#include "util/ConsoleDrawing.h"
 
 TEST_CASE("Should load successfully a file", "[PMBLoader]")
 {
@@ -106,6 +107,13 @@ TEST_CASE("Should load successfully a file", "[PMBLoader]")
         for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
         {
             REQUIRE((bool) pixels[i] == image->at(i).value);
+        }
+
+        for (std::size_t i = 0; i < image->getTotalPixelCount(); ++i)
+        {
+            if (i % 10 == 0)
+                std::cout << std::endl;
+            improc::draw(image->at(i));
         }
     }
 }

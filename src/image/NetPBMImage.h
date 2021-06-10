@@ -9,10 +9,13 @@ namespace improc
 {
 // We have the pnm::image class, however we want to demonstrate some of our own
 // skill, so we write wrappers with additional functionality
-template <typename PixelType,
-          typename = std::enable_if<std::is_base_of<Pixel, PixelType>::value>>
+// Further the type is not allowed for types that do not extend Pixel(enforced
+// with static_assert)
+template <typename PixelType>
 class NetPBMImage
 {
+    static_assert(std::is_base_of<Pixel, PixelType>::value,
+                  "The PixelType must extend the Pixel class");
 public:
     NetPBMImage(std::size_t width, std::size_t height)
         : width(width), height(height)
@@ -35,6 +38,7 @@ protected:
     std::size_t height;
 };
 
+// An image of PBM pixels - 0 or 1
 class PBMImage : public NetPBMImage<PixelPBM>
 {
 public:

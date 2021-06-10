@@ -88,6 +88,27 @@ PixelPBM::PixelPBM() : value(false) {}
 
 PixelPBM::PixelPBM(bool value) : value(value) {}
 
+PixelPGM PixelPBM::toPGMPixel() const
+{
+    return PixelPGM(value * 255);
+}
+
+PixelPPM PixelPBM::toPPMPixel() const
+{
+    const unsigned short channelVal = value * 255;
+    return PixelPPM(channelVal, channelVal, channelVal);
+}
+
+PixelPBM::operator PixelPGM() const
+{
+    return toPGMPixel();
+}
+
+PixelPBM::operator PixelPPM() const
+{
+    return toPPMPixel();
+}
+
 void PixelPGM::parse(const std::string& str)
 {
     int parsed = -1;
@@ -106,10 +127,29 @@ void PixelPGM::parse(const std::string& str)
             "Could not parse number, has to be in the range 0-255");
     }
 }
+
 std::string PixelPGM::toStr() const
 {
     return std::to_string(value);
 }
+
 PixelPGM::PixelPGM() : value(0) {}
+
 PixelPGM::PixelPGM(unsigned short value) : value(value) {}
+
+PixelPBM PixelPGM::toPBMPixel(int& outError) const
+{
+    outError = 255 - value;
+    return PixelPBM(outError < 128 ? false : true);
+}
+
+PixelPPM PixelPGM::toPPMPixel() const
+{
+    return PixelPPM(value, value, value);
+}
+
+PixelPGM::operator PixelPPM() const
+{
+    return toPPMPixel();
+}
 }  // namespace improc
